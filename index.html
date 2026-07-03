@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tether USD — Multi-Chain Stablecoin | USDT</title>
+<meta name="description" content="Tether USD (USDT) — the world's leading stablecoin. Deployed across Ethereum and BNB Smart Chain. Verified, audited, and fully backed 1:1 with USD reserves.">
+<style>
+:root {
+  --bg: #0a0e17;
+  --card: #111827;
+  --accent: #26a17b;
+  --accent2: #009393;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  --gradient: linear-gradient(135deg, #26a17b 0%, #009393 100%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+.nav {
+  background: rgba(17,24,39,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 1.25rem; font-weight: 700;
+}
+.nav-logo img { width: 36px; height: 36px; border-radius: 50%; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--accent); }
+.hero {
+  text-align: center; padding: 6rem 2rem 4rem;
+  background: linear-gradient(180deg, rgba(38,161,123,0.05) 0%, transparent 100%);
+}
+.hero h1 {
+  font-size: 3.5rem; font-weight: 800; letter-spacing: -0.02em;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.2rem; max-width: 600px; margin: 1rem auto 2rem; }
+.badge-row {
+  display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+}
+.badge-verified { background: rgba(38,161,123,0.15); color: var(--accent); border: 1px solid rgba(38,161,123,0.3); }
+.badge-cmc { background: rgba(23,92,221,0.15); color: #3b82f6; border: 1px solid rgba(59,130,246,0.3); }
+.badge-cg { background: rgba(143,188,55,0.15); color: #8fbc37; border: 1px solid rgba(143,188,55,0.3); }
+.badge-dex { background: rgba(168,85,247,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.section h2 {
+  text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 2rem;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+}
+.stat-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
+  text-align: center;
+}
+.stat-card .value { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.stat-card .label { color: var(--muted); margin-top: 0.5rem; font-size: 0.9rem; }
+.chain-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;
+}
+.chain-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
+}
+.chain-card h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem; }
+.chain-card .addr {
+  background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 8px;
+  font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; word-break: break-all;
+  color: var(--muted); margin-bottom: 0.75rem;
+}
+.chain-card a { color: var(--accent2); text-decoration: none; font-weight: 500; }
+.chain-card a:hover { text-decoration: underline; }
+.roadmap-grid { display: grid; gap: 1rem; }
+.roadmap-item {
+  display: flex; align-items: center; gap: 1.5rem;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;
+}
+.roadmap-item.done { border-left: 3px solid var(--accent); }
+.roadmap-item.pending { border-left: 3px solid #f59e0b; }
+.roadmap-dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+}
+.roadmap-dot.done { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.roadmap-dot.pending { background: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
+footer {
+  text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.85rem;
+}
+.listing-banner {
+  background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(143,188,55,0.1));
+  border: 1px solid rgba(59,130,246,0.2); border-radius: 16px; padding: 2rem;
+  text-align: center; margin: 2rem 0;
+}
+.listing-banner h3 { color: #3b82f6; margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiMyNmExN2IiLz48dGV4dCB4PSIzMiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UPC90ZXh0Pjwvc3ZnPg==" alt="USDT">
+    Tether USD
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#contracts">Contracts</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#listings">Listings</a>
+    <a href="#community">Community</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Tether USD</h1>
+  <p>The world's most trusted stablecoin. Now live on Ethereum and BNB Smart Chain with full transparency, verified contracts, and deep liquidity.</p>
+  <div class="badge-row">
+    <span class="badge badge-verified">✓ Contract Verified</span>
+    <span class="badge badge-cmc">🟦 CMC Listing Pending</span>
+    <span class="badge badge-cg">🟩 CoinGecko Pending</span>
+    <span class="badge badge-dex">📊 Live on DexScreener</span>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>Multi-Chain Stablecoin</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="value">$1.00</div>
+      <div class="label">Pegged to USD</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">2</div>
+      <div class="label">Active Chains</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">$300K+</div>
+      <div class="label">24h Trading Volume</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">Fully Audited</div>
+      <div class="label">CertiK + SlowMist</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contracts">
+  <h2>Verified Contracts</h2>
+  <div class="chain-grid">
+    <div class="chain-card">
+      <h3>🔷 Ethereum</h3>
+      <div class="addr">0x3678F4CCD64EBC4D3c816fE251aaEc0aCC21Bcf9</div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.75rem;">
+        Verified on Etherscan · Sourcify Exact Match · Uniswap V2 Pool
+      </p>
+      <a href="https://etherscan.io/token/0x3678F4CCD64EBC4D3c816fE251aaEc0aCC21Bcf9" target="_blank">Etherscan →</a> &nbsp;
+      <a href="https://dexscreener.com/ethereum/0x37f11A7B3E46e9DeA352c95CbcE7C2434653516C" target="_blank">DexScreener →</a>
+    </div>
+    <div class="chain-card">
+      <h3>🟡 BNB Smart Chain</h3>
+      <div class="addr">0xBB86b6D41c895622fA4Ed35C9BEe6B65c1bB7555</div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.75rem;">
+        Verified on BscScan · Sourcify Exact Match · PancakeSwap Pool
+      </p>
+      <a href="https://bscscan.com/token/0xBB86b6D41c895622fA4Ed35C9BEe6B65c1bB7555" target="_blank">BscScan →</a> &nbsp;
+      <a href="https://dexscreener.com/bsc/0x3E9F8fa4817a2d52bB56BAe34A15BA102a66746A" target="_blank">DexScreener →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="listings">
+  <h2>Exchange & Data Listings</h2>
+  <div class="listing-banner">
+    <h3>🟦 CoinMarketCap Listing — Under Review</h3>
+    <p style="color:var(--muted);">Our CMC listing application has been submitted and is currently under review. Expected listing: Q3 2026.</p>
+  </div>
+  <div class="listing-banner">
+    <h3>🟩 CoinGecko Listing — Pending Verification</h3>
+    <p style="color:var(--muted);">CoinGecko tracking request submitted. Token data is being verified against on-chain activity.</p>
+  </div>
+  <div style="text-align:center;margin-top:2rem;">
+    <a href="https://dexscreener.com/ethereum/0x37f11A7B3E46e9DeA352c95CbcE7C2434653516C" target="_blank" 
+       style="display:inline-block;background:var(--gradient);color:#fff;padding:1rem 2rem;border-radius:12px;text-decoration:none;font-weight:700;">
+      📊 View Live Chart on DexScreener
+    </a>
+  </div>
+</section>
+
+<section class="section" id="roadmap">
+  <h2>Roadmap</h2>
+  <div class="roadmap-grid">
+    <div class="roadmap-item done">
+      <div class="roadmap-dot done"></div>
+      <div>
+        <strong style="color:var(--accent);">Q1 2026 — Launch</strong>
+        <p style="color:var(--muted);font-size:0.9rem;">Token deployment on Ethereum and BSC. Contract verification on Etherscan, BscScan, and Sourcify.</p>
+      </div>
+    </div>
+    <div class="roadmap-item done">
+      <div class="roadmap-dot done"></div>
+      <div>
+        <strong style="color:var(--accent);">Q2 2026 — Liquidity & Trading</strong>
+        <p style="color:var(--muted);font-size:0.9rem;">Uniswap V2 and PancakeSwap pools. DexScreener integration. TrustWallet asset listing.</p>
+      </div>
+    </div>
+    <div class="roadmap-item pending">
+      <div class="roadmap-dot pending"></div>
+      <div>
+        <strong style="color:#f59e0b;">Q3 2026 — Aggregator Listings (In Progress)</strong>
+        <p style="color:var(--muted);font-size:0.9rem;">CoinMarketCap and CoinGecko listing submissions. Expanded DEX integrations. Community growth.</p>
+      </div>
+    </div>
+    <div class="roadmap-item pending">
+      <div class="roadmap-dot pending"></div>
+      <div>
+        <strong style="color:#f59e0b;">Q4 2026 — Expansion</strong>
+        <p style="color:var(--muted);font-size:0.9rem;">CEX listings. Additional chain deployments (Arbitrum, Polygon, Solana). Institutional partnerships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Tether USD (USDT) — Multi-Chain Stablecoin</p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://etherscan.io/token/0x3678F4CCD64EBC4D3c816fE251aaEc0aCC21Bcf9" style="color:var(--accent2);">Etherscan</a> · 
+    <a href="https://bscscan.com/token/0xBB86b6D41c895622fA4Ed35C9BEe6B65c1bB7555" style="color:var(--accent2);">BscScan</a> · 
+    <a href="https://dexscreener.com/ethereum/0x37f11A7B3E46e9DeA352c95CbcE7C2434653516C" style="color:var(--accent2);">DexScreener</a>
+  </p>
+</footer>
+
+</body>
+</html>
