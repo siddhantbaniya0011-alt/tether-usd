@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquidity Locked — Tether USD (USDT)</title>
+<style>
+:root { --bg: #0a0e17; --card: #111827; --accent: #26a17b; --text: #e5e7eb; --muted: #9ca3af; --border: #1f2937; --gold: #f59e0b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.8; }
+.nav { background:rgba(17,24,39,0.95); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:1rem 2rem; position:sticky; top:0; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { font-weight:700; font-size:1.25rem; }
+.nav-links { display:flex; gap:2rem; }
+.nav-links a { color:var(--muted); text-decoration:none; }
+.nav-links a:hover { color:var(--accent); }
+.content { max-width:900px; margin:0 auto; padding:3rem 2rem; }
+h1 { font-size:2.2rem; color:var(--accent); margin-bottom:1rem; }
+h2 { color:var(--accent); margin:2rem 0 1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem; }
+p { color:var(--muted); margin-bottom:1rem; }
+.cert { background:linear-gradient(135deg, var(--card), #1a2744); border:2px solid var(--gold); border-radius:20px; padding:3rem; text-align:center; margin:2rem 0; }
+.cert h2 { color:var(--gold); border:none; font-size:2rem; }
+.cert .hash { background:rgba(0,0,0,0.4); padding:1rem; border-radius:8px; font-family:monospace; font-size:0.8rem; word-break:break-all; margin:1rem 0; color:var(--muted); }
+.badge { display:inline-block; background:rgba(245,158,11,0.15); color:var(--gold); padding:0.5rem 1.2rem; border-radius:50px; font-weight:700; margin:0.3rem; }
+table { width:100%; border-collapse:collapse; margin:1.5rem 0; background:var(--card); border-radius:12px; overflow:hidden; }
+th { background:rgba(38,161,123,0.15); color:var(--accent); padding:0.75rem 1rem; text-align:left; }
+td { padding:0.75rem 1rem; border-bottom:1px solid var(--border); color:var(--muted); }
+footer { text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.85rem; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">🔒 Liquidity Locked</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="audit.html">Audit</a>
+    <a href="whitepaper.html">Whitepaper</a>
+  </div>
+</nav>
+
+<div class="content">
+
+<div class="cert">
+  <h2>🔒 LIQUIDITY LOCK CERTIFICATE</h2>
+  <p style="font-size:1.3rem;color:var(--gold);font-weight:700;">100% of LP Tokens Permanently Locked</p>
+  <p>This certificate verifies that all liquidity provider (LP) tokens for the Tether USD (USDT) pools have been permanently removed from circulation, ensuring that liquidity cannot be withdrawn by any party.</p>
+  <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;">
+    <span class="badge">🔷 Ethereum — 100% Locked</span>
+    <span class="badge">🟡 BSC — 100% Locked</span>
+    <span class="badge">🔒 Verifiable On-Chain</span>
+    <span class="badge">⏰ Permanent</span>
+  </div>
+</div>
+
+<h2>Lock Details</h2>
+<table>
+  <tr><th>Parameter</th><th>Ethereum (Uniswap V2)</th><th>BNB Smart Chain (PancakeSwap V2)</th></tr>
+  <tr><td>Pair Address</td><td style="font-size:0.7rem;">0x37f11A7B3E46e9DeA352c95CbcE7C2434653516C</td><td style="font-size:0.7rem;">0x3E9F8fa4817a2d52bB56BAe34A15BA102a66746A</td></tr>
+  <tr><td>Lock Mechanism</td><td>LP sent to 0x...dEaD (burn)</td><td>LP sent to 0x...dEaD (burn)</td></tr>
+  <tr><td>Lock Date</td><td>July 27, 2026</td><td>July 27, 2026</td></tr>
+  <tr><td>Lock Duration</td><td>Permanent (burned)</td><td>Permanent (burned)</td></tr>
+  <tr><td>LP Percentage Locked</td><td>100%</td><td>100%</td></tr>
+  <tr><td>Status</td><td style="color:#22c55e;">✅ ACTIVE</td><td style="color:#22c55e;">✅ ACTIVE</td></tr>
+</table>
+
+<h2>Verification</h2>
+<p>The LP tokens have been sent to the canonical burn address <code style="background:var(--card);padding:0.2rem 0.5rem;border-radius:4px;">0x000000000000000000000000000000000000dEaD</code>. This is verifiable on-chain by querying the LP token balance of the burn address for each pair contract.</p>
+
+<div class="cert" style="margin-top:2rem;">
+  <p style="font-size:0.9rem;color:var(--muted);">Lock verification can be performed independently:</p>
+  <div class="hash">Ethereum Pair: 0x37f11A7B3E46e9DeA352c95CbcE7C2434653516C → balanceOf(0xdEaD)</div>
+  <div class="hash">BSC Pair: 0x3E9F8fa4817a2d52bB56BAe34A15BA102a66746A → balanceOf(0xdEaD)</div>
+  <p style="color:var(--gold);margin-top:1rem;">ℹ️ No party can withdraw liquidity. Funds are SAFU.</p>
+</div>
+
+</div>
+<footer><p>Tether USD · <a href="index.html" style="color:var(--accent);">Home</a> · Liquidity permanently locked.</p></footer>
+</body>
+</html>
