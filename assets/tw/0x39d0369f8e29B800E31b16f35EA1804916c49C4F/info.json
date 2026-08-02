@@ -1,0 +1,41 @@
+{
+    "name": "Tether USD",
+    "website": "https://siddhantbaniya0011-alt.github.io/tether-usd/",
+    "description": "Tether USD (USDT) is a stablecoin pegged to the US dollar, deployed on BNB Smart Chain.",
+    "explorer": "https://bscscan.com/token/0x39d0369f8e29B800E31b16f35EA1804916c49C4F",
+    "type": "BEP20",
+    "symbol": "USDT",
+    "decimals": 6,
+    "status": "active",
+    "id": "0x39d0369f8e29B800E31b16f35EA1804916c49C4F",
+    "links": [
+        {
+            "name": "github",
+            "url": "https://github.com/siddhantbaniya0011-alt/tether-usd"
+        },
+        {
+            "name": "twitter",
+            "url": "https://x.com/tether_usdt"
+        },
+        {
+            "name": "telegram",
+            "url": "https://t.me/tether_usdt"
+        },
+        {
+            "name": "coinmarketcap",
+            "url": "https://coinmarketcap.com/currencies/tether/"
+        },
+        {
+            "name": "coingecko",
+            "url": "https://www.coingecko.com/en/coins/tether"
+        },
+        {
+            "name": "dexscreener",
+            "url": "https://dexscreener.com/bsc/0xd2CCd0D22269E4Aa8df21f5eEe907DeEB3B60FC8"
+        }
+    ],
+    "tags": [
+        "stablecoin",
+        "defi"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Tether USD Token List",
+  "version": { "major": 1, "minor": 1, "patch": 0 },
+  "timestamp": "2026-08-02T00:00:00Z",
+  "logoURI": "https://raw.githubusercontent.com/siddhantbaniya0011-alt/tether-usd/main/assets/logo.png",
+  "keywords": ["usdt", "tether", "stablecoin", "bsc"],
+  "tokens": [
+    {
+      "chainId": 56,
+      "address": "0x39d0369f8e29B800E31b16f35EA1804916c49C4F",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/siddhantbaniya0011-alt/tether-usd/main/assets/logo.png"
+    },
+    {
+      "chainId": 1,
+      "address": "0x3678F4CCD64EBC4D3c816fE251aaEc0aCC21Bcf9",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/siddhantbaniya0011-alt/tether-usd/main/assets/logo.png"
+    }
+  ]
+}
